@@ -1,0 +1,477 @@
+/* Paleta de Cores Original */
+:root {
+    --cor-principal: #128e4a;    /* Verde */
+    --cor-fundo: #fefefe;        /* Branco */
+    --cor-texto: #373435;       /* Cinza escuro */
+    --cor-destaque: #85b1d4;     /* Azul claro */
+    --cor-secundaria: #e4ea89;   /* Amarelo claro */
+    --cor-degrade-cinza-claro: #f8f8f8; /* Cinza para o degradê */
+    --cor-degrade-cinza-escuro: #dcdcdc; /* Cinza para o degradê */
+}
+/* Estilos para o Cabeçalho Fixo */
+.header-fixo {
+    position: fixed; /* A propriedade mágica para fixar o elemento na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--cor-texto);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 100; /* Garante que o cabeçalho fique acima de outros elementos */
+    padding: 10px 0;
+}
+
+.header-fixo .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-menu {
+    width: 100px;
+    height: auto;
+    margin-bottom: 2px;
+    display: block;
+}
+.logo-menu img{
+    width: 120px;
+    height: auto;
+    display: block;
+}
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    z-index: 200;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--cor-degrade-cinza-escuro);
+    margin: 5px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Alinha os itens do menu horizontalmente */
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--cor-degrade-cinza-escuro);
+    font-weight: 500;
+    font-size: 0.8em;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--cor-principal);
+}
+
+/* Estilo do menu de navegação para mobile */
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--cor-degrade-cinza-claro);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--cor-principal);
+}
+
+body {
+    font-family: "DM Mono", monospace;
+    margin: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.2;    
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 60px; /* Ajuste este valor conforme a altura final do seu cabeçalho */
+
+    
+}
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Novo: Regra para todos os parágrafos */
+p {
+    font-size: 0.875em;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    margin-top: 1em;
+}
+
+h1, h2, h3 {
+    color: var(--cor-texto);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-top: 0; /* Unificando o espaçamento para evitar o padrão do navegador */
+}
+
+/* Alterado o espaçamento para ser uniforme em toda a página */
+h2 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 1em; 
+    color: var(--cor-texto);
+}
+
+/* Botão CTA Geral */
+.cta-button {
+    display: inline-block;
+    background-color: var(--cor-principal);
+    color: var(--cor-fundo);
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+}
+.cta-button:hover {
+    background-color: #0d6e3c;
+}
+/* Hero Section */
+.hero {
+    /* SUBSTITUA O CAMINHO ABAIXO PELA SUA IMAGEM DE FUNDO */
+    background-size: cover;
+    background-position: center;
+    background-color: var(--cor-texto); /* Cor de sobreposição (opcional) */
+    background-blend-mode: multiply; /* Modo de blend da sobreposição (opcional) */
+    padding: 100px 0;
+    color: #fff;
+    text-align: center;
+}
+.hero-content {
+    max-width: 800px;
+}
+.logo {
+    /* SUBSTITUA O CAMINHO ABAIXO PELO SEU LOGO */
+    max-width: 250px;
+    margin-bottom: 1em; /* Espaçamento abaixo do logo */
+}
+.headline {
+    font-size: 2.375em;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+    margin-bottom: 0.8em; /* Espaçamento abaixo do h1, relativo ao seu próprio tamanho */
+}
+.sub-headline {
+    font-size: 0.875em;
+    color: #fff;
+    margin-bottom: 2em; /* Espaçamento para o botão de chamada */
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+}
+/* Seção de Serviços */
+.section-servicos, .section-sobre, .section-portfolio, .section-depoimentos {
+    padding: 4em 0; /* Espaçamento entre os containers, unificado e usando 'em' */
+}
+.section-servicos, .section-portfolio {
+    background-color: var(--cor-fundo);
+}
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+.servico-item {
+    /* Adicione a imagem de fundo aqui */
+    background-image: url('./assets/degrade_transversal.png');
+    
+    /* Propriedades para garantir que a imagem se ajuste corretamente */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    padding: 30px;
+    border-radius: 35px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    line-height: 1.3;
+    
+    /* Opcional: Adicione uma sobreposição de cor para melhorar a leitura do texto */
+    /*background-color: rgba(0, 0, 0, 0.3);*/
+    background-blend-mode: overlay;
+    
+    /* Opcional: Mude a cor do texto para branco ou outra cor clara para legibilidade */
+    color: #474747;
+}
+.servico-item i {
+    font-size: 2.5em;
+    color: var(--cor-principal);
+    margin-top: .5em;
+    margin-bottom: 1em; /* Espaçamento abaixo do ícone */
+}
+.servico-item p {
+    margin-top: 0; /* Espaçamento entre o h3 e o p dentro do servico-item */
+    line-height: 1.3;
+}
+/* Seção Sobre a Empresa */
+.section-sobre {
+    padding: 3em 0; /* Mantendo a uniformidade */
+    background-color: var(--cor-fundo);
+}
+.sobre-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    text-align: left;
+}
+.sobre-texto {
+    flex: 1;
+}
+.sobre-imagem {
+    flex: 1;
+}
+.sobre-imagem img {
+    /* SUBSTITUA O CAMINHO ABAIXO PELA SUA IMAGEM */
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+/* Seção de Portfólio */
+.section-portfolio {
+    padding: 3em 0; /* Mantendo a uniformidade */
+    /* Substitua a URL abaixo pela sua URL de teste */
+    /*background-image: url('./assets/degrade_transversal1.png');*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(228, 228, 228, 0.753);
+    background-blend-mode: overlay;
+    color: #fff;
+}
+
+.galeria-projetos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+    place-items: center;
+}
+.galeria-projetos img {
+    /* SUBSTITUA O CAMINHO ABAIXO PELAS SUAS IMAGENS */
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+.galeria-projetos img:hover {
+    transform: scale(1.03);
+}
+/* Seção de Depoimentos */
+.section-depoimentos {
+    padding: 3em 0; /* Mantendo a uniformidade */
+    text-align: center;
+}
+.depoimento-box {
+    background-color: rgba(228, 228, 228, 0.753);
+    padding: 30px;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 700px;
+    font-style: italic;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+.autor-depoimento {
+    font-style: normal;
+    font-weight: bold;
+    margin-top: 15px;
+    text-align: right;
+    color: var(--cor-principal);
+}
+/* --- Seção de CTA Final --- */
+.section-cta-final {
+    padding: 3em 0; /* Mantendo a uniformidade */
+    text-align: center;
+    /* Removido o degradê de cinza. A cor agora será definida pelo wrapper. */
+}
+.section-cta-final h2, .section-cta-final p {
+    color: #474747; /* Alterando a cor do texto para branco para melhor contraste com a imagem de fundo */
+}
+.section-cta-final .cta-button {
+    background-color: var(--cor-principal);
+    color: var(--cor-fundo);
+}
+.section-cta-final .cta-button:hover {
+    background-color: #0d6e3c;
+}
+
+/* --- Rodapé (Footer) --- */
+footer {
+    padding: 1.5em 0; /* Mantendo a uniformidade com a metade do padding de seções */
+    text-align: center;
+    /* Removido o background do rodapé. A cor agora será definida pelo wrapper. */
+}
+footer p {
+    color: #fff; /* Alterando a cor do texto para branco para melhor contraste */
+}
+
+/* --- Novo Contêiner para a Imagem de Fundo --- */
+.final-section-wrapper {
+    background-image: url('./assets/img_footer.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Opcional: Adicionar uma sobreposição escura para garantir que o texto seja legível */
+    /*background-color: rgba(0, 0, 0, 0.6);
+    background-blend-mode: overlay;*/
+}
+
+/* Botão de WhatsApp Flutuante */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor-destaque);
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.floating-whatsapp img {
+    width: 35px;
+}
+.floating-whatsapp:hover {
+    transform: scale(1.1);
+}
+/* Responsividade Aprimorada */
+@media (max-width: 992px) {
+    .container {
+        padding: 0 15px;
+    }
+}
+@media (max-width: 768px) {
+    .headline {
+        font-size: 2.2em;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    .sobre-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .sobre-imagem {
+        margin-top: 30px;
+    }
+    .servicos-grid, .galeria-projetos {
+        gap: 20px;
+    }
+    .depoimento-box {
+        padding: 20px;
+    }
+}
+@media (max-width: 576px) {
+    .headline {
+        font-size: 1.8em;
+    }
+    .sub-headline {
+        font-size: 1em;
+    }
+    .cta-button {
+        padding: 12px 25px;
+    }
+    .floating-whatsapp {
+        width: 50px;
+        height: 50px;
+    }
+    .floating-whatsapp img {
+        width: 30px;
+    }
+}
+/* ---------------------------------- */
+/* --- Responsividade do Cabeçalho ---*/
+/* ---------------------------------- */
+
+@media (max-width: 768px) {
+    /* Exibe o botão do menu em telas pequenas */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Estilo do menu para telas pequenas (escondido por padrão) */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 60%;
+        height: 100%;
+        background-color: var(--cor-texto);
+        box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+        transform: translateX(100%); /* Esconde o menu fora da tela */
+        transition: transform 0.3s ease-in-out;
+        padding-top: 80px;
+        z-index: 150;
+    }
+
+    .nav-menu.menu-aberto {
+        transform: translateX(0); /* Move o menu para dentro da tela */
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 10px;
+        font-size: 1.2em;
+        border-radius: 5px;
+        text-align: left;
+    }
+}
+/* Efeito de sobreposição quando o menu está aberto em dispositivos móveis */
+body.menu-aberto::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Cor preta com 50% de transparência */
+    z-index: 100;
+}
